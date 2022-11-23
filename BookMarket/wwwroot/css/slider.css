@@ -1,0 +1,137 @@
+﻿.slider_wrapper {
+    display: flex;
+    width: 1035px;
+    min-height: max-content;
+    margin-bottom: 1em;
+}
+
+.slider-title{
+    margin: 0 0 1em 1em;
+    font-size: 29px;
+    font-weight:700;
+}
+
+@media (max-width:1500px) {
+    .slider_wrapper {
+        width: 780px;
+    }
+
+    .slider_card {
+        margin-right: 60px;
+    }
+
+    .slider-card img {
+                
+    }
+}
+
+@media (max-width:1300px) {
+    .slider_wrapper {        
+        width: 750px;
+    }
+
+    .slider-card {
+        margin-right: 15px;
+        
+    }
+
+    .slider-card img {        
+        width: 150px;
+        height: 200px;
+    }
+}
+
+@media (max-width:1120px) {
+    .slider_wrapper {
+        width: 500px;
+    }
+
+    .slider-card {
+        margin-right: 25px;
+    }
+
+    .slider-card img {        
+        width: 200px;
+        height: 250px;
+    }
+}
+
+.slider {
+    overflow: hidden;
+    display: flex;
+    width: max-content;
+    min-height: max-content;
+    padding-bottom:3px;
+}
+
+.slider-line {
+    margin-left: 15px;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: all 0.2s linear;
+}
+
+.slider-card {
+    align-self: start;
+    margin-right: 50px;
+    font-size: 15px;
+    
+}
+
+.slider-card img{
+    object-fit:scale-down;    
+    height:250px;
+    width: 200px;
+}
+
+.slider-card-title {
+    max-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.slider-card-author-year {
+    max-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-style:italic;
+    color: #2b2b2bca;
+    
+}
+
+.slider-card-rating{
+    font-size: 16px;
+}
+
+.slider-butn {
+    height: max-content;
+    width: max-content;
+    align-self: center;
+    border-width: 0;
+    border-radius: 10px;
+    background: none;
+    opacity: 0.55;
+}
+
+    .slider-butn:hover {
+        background-color: #8080805d;
+        opacity: 1;
+    }
+
+.slider-butn img{
+    height: 38px;
+}
+
+.button_block {
+    display:flex;
+    position: relative;
+    height: stretch;
+    min-width: 35px;
+}
+
+.slider-butn.prev {
+    display:none;
+}
+

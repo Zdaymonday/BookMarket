@@ -1,0 +1,16 @@
+﻿@model BookMarket.ViewModels.Admin.EditUserOrderByAdminViewModel
+
+@{
+    Layout = "_Layout_admin";
+}
+
+<div class="edit-user-by-admin-container">
+    <div class="edit-user-by-admin-container-header">Редактирование заказа</div>
+    <form method="post" asp-action="EditUserOrder">
+        <input name="id" type="hidden" value="@Model.Order.Id" />
+        <select name="payment_status" asp-items="Model.PaymentStatusList"></select>
+        <select name="order_status" asp-items="Model.OrderStatusList"></select>
+        <input type="submit" value="Save" />
+    </form>
+    <a asp-action="UserOrderHistory" asp-route-user_id="@Model.Order.OwnerId">Назад к заказам пользователя</a>
+</div>

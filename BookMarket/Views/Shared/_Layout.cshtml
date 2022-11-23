@@ -1,0 +1,87 @@
+﻿@inject BookMarket.Infrastracture.CartService cartService
+@{
+    int item_count = await cartService.GetNumOfItemsInCart();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/user_raiting.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/main.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/slider.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/pagination.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/cart.css" asp-append-version="true" />
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"> </script>
+    <script src="/js/slider.js" asp-append-version="true"></script>
+    <script src="/js/home.js" asp-append-version="true"></script>
+</head>
+<body>
+    <!-- Inner -->
+    <div class="inner-container shadow-lg">
+        <!-- Header -->
+        <div class="header-wrapper shadow-sm ">
+            <div class="logo-container">
+                <a class="clickable-card" asp-action="Index" asp-controller="Home">
+                    <img src="~/image/color_icon_small.png" />
+                </a>
+            </div>
+
+            <div class="top-panel-container">
+                <ul>
+                    @if(User?.Identity?.IsAuthenticated ?? false){
+                        <li>
+                            <a class="user-profile-link" asp-action="Index" asp-controller="Account">Личный кабинет @User.Identity.Name</a>
+                        </li>
+                    }
+                    <li><a href="#pay">Оплата</a></li>
+                    <li><a href="#contects">Контакты</a></li>
+                    <li><a href="#delivery">Доставка</a></li>
+                </ul>
+            </div>
+            <div class="bottom-header-container">
+                <form class="search-container" asp-action="Search" asp-controller="Catalog" method="get">
+                    <input type="search" name="context" class="form-control rounded shadow-sm" placeholder="Search" />
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+
+                <div class="login-container">
+                    <ul>
+                        <li>
+                            @if (User?.Identity?.IsAuthenticated ?? false)
+                            {
+                                <a class="login-top-button btn btn-primary" asp-action="Logout" asp-controller="Account">Выход</a>
+                            }
+                            else{
+                                <a class="login-top-button btn btn-primary" asp-action="Login" asp-controller="Account">Вход</a>
+                            }
+                        </li>
+                        <li>
+                            <a class="cart-top-button btn btn-secondary" asp-action="Index" asp-controller="Cart">Корзина@(item_count > 0 ? $"({item_count})" : "")</a>                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- Body -->
+        @RenderBody()
+
+        <div class="footer-container">
+            Копирайт © 2022. Шишки и мишки.com
+        </div>
+    </div>
+
+</body>
+</html>

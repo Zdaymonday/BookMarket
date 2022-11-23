@@ -1,0 +1,187 @@
+﻿h3{
+    font-weight:600;
+}
+
+.book-main-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 10px;
+    background-color: #f1f4f8ad;
+}
+
+.book-image-container {
+}
+
+    .book-image-container img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+.book-description-container {
+}
+
+.author-and-year {
+    display: flex;
+    font-style: italic;
+    color: #808080;
+    margin: 0 0 2px 2px;
+}
+
+.book-annotation-container{
+    margin-top:2em;
+    font-style:italic; 
+    display:flex;
+    height:max-content;
+}
+
+.book-annotation-text{
+    align-items:end;
+}
+
+
+.put-in-cart-btn {
+    text-decoration:none;
+    border: 2px solid #666666ef;
+    background: #e2e6eac3;
+    height: 100%;
+    border-radius: 5px;
+    font-size: 28px;
+    color: #101010f1;
+}
+
+.price-container {
+    margin:1em 0;
+    display: flex;
+    justify-content: center;    
+}
+
+.price-container {
+}
+
+.inner-btn-container {    
+    display: flex;
+    height: contain;
+}
+
+.text-price{
+    font-size:100%;
+    text-decoration:none;
+}
+
+.text-price :hover {
+    color: black;
+}
+
+.cart-img-container {
+    height: 31px;
+    width: 31px;
+    margin: 1px 0px;
+    padding-bottom: 2px;
+}
+.inner-btn-container img {
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    object-fit: fill;
+}
+
+.separator {
+    border-left: 2px solid #666666ef;
+    margin:0 10px;    
+}
+
+/*Ниже часть с отзывами*/
+.book-reviews-container-header{
+    margin: 0 0 1em 2em;
+    display:flex;
+}
+    .book-reviews-container-header ul {
+        list-style:none;
+        display:flex;
+        padding:0;
+        margin:0;
+    }
+
+    .book-reviews-container-header ul li {        
+        padding: 0;
+        margin: 0 0 0 1em;
+    }
+
+
+.book-reviews-container-header button{
+    border:none;
+    background:none;
+}
+
+.book-reviews-container {
+    margin-top: 1em;
+    background-color: #f1f4f8ad;
+}
+
+.review-author-and-raiting {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #f1f4f8ad;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #c6cbd0ff;
+}
+
+.review-author {
+    text-align: left;
+    padding-left: 1em;
+}
+
+.review-raiting {
+    justify-self: end;
+    padding: 3px 5px 0 0;
+}
+
+.review-text{
+    margin-left:1em;
+}
+
+
+.read-more-button {
+    border: none;
+    background: none;
+    color: blue;
+}
+
+.review-textblock-bottom {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s linear;
+}
+
+.hide-button {
+    border: none;
+    background: none;
+    color: blue;
+    display: none;
+}
+
+.book-reviews-container ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+.book-reviews-container li {
+    border-radius: 10px;
+    border-width: 1px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid #9ca0a3e2;
+    box-shadow: -5px 5px 10px #9ca0a3e2;
+}
+
+    .book-reviews-container li:nth-child(even) {
+        background-color: #f1f4f8d8;
+        border-color: #e3e7ebd8;
+    }
+
+    .book-reviews-container li:nth-child(odd) {
+        background-color: #e3e7ebd8;
+        border-color: #d2d6dbd8;
+    }

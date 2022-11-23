@@ -1,0 +1,35 @@
+﻿@model BookMarket.ViewModels.Cart.OrderViewModel
+
+<div class="place-order-container">
+    <form class="place-order-form" method="post" asp-action="PlaceAnOrder" asp-controller="Cart">
+        <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="UserId" />
+        <div>
+            <label>Email:</label>
+            <input asp-for="UserEmail" placeholder="Email" />
+            <span asp-validation-for="UserEmail"></span>
+        </div>
+
+        <div>
+            <label>Телефон:</label>
+            <input asp-for="UserPhone" />
+            <span asp-validation-for="UserPhone"></span>
+        </div>
+
+        <div>
+            <label>ФИО</label>
+            <input asp-for="Name" />
+        </div>
+
+        <div>
+            <label>Адресс:</label>
+            <input asp-for="Address" />
+        </div>
+
+        <div>
+            <label>&nbsp;</label>
+            <input type="submit" value="Подтвердить заказ" />
+            <a asp-action="Index" asp-controller="Cart">К корзине</a>
+        </div>
+    </form>
+</div>

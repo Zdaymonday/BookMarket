@@ -1,0 +1,55 @@
+﻿@model CatalogViewModel
+
+<link rel="stylesheet" href="/css/catalog.css" asp-append-version="true" />
+<script src="/js/catalog.js" asp-append-version="true"></script>
+
+<div class="body-container shadow-sm">
+
+    <!-- Burger menu -->
+    <div class="burger-container">
+        <button class="list-btn">
+            <img src="~/image/list.svg" class="list-icon" />
+        </button>
+    </div>
+
+
+    @await Html.PartialAsync("Navbar")
+    <div>
+        <div class="catalog-wrapper content-container">
+            @foreach (var item in Model.BookCards)
+            {
+                <!--Если не обернуть ссылку в div то разметка сгенерит две ссылки-->
+                <div>
+                    <a asp-action="Book" asp-controller="Catalog" asp-route-id="@item.Id">
+                        <div class="book-card">
+                            <div class="book-card-image">
+                                <img src=@item.BookImagePath alt="image">
+                            </div>
+                            <div class="book-card-title">
+                                <a href="#">@item.Title</a>
+                            </div>
+                            <div class="book-card-author">
+                                <a href="#">@item.Author</a>
+                            </div>
+                            <div class="book-card-raiting">
+                                <div class="book-card-raiting-text">
+                                    Оценка:&nbsp;
+                                </div>
+                                <div class="book-card-raiting-number" id="@item.Rating">
+                                    @item.Rating
+                                </div>
+                            </div>
+                            <div class="book-card-price">
+                                @item.Price руб.
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+        @await Html.PartialAsync("Pagination", Model.PageViewModel)
+    </div>
+
+</div>
+
+

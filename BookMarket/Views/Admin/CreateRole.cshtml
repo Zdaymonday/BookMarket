@@ -1,0 +1,23 @@
+﻿@model BookMarket.ViewModels.Admin.RoleViewModel
+
+@{
+    Layout = "_Layout_admin";
+}
+
+<div class="edit-role-container">
+    <div class="edit-role-form-wrapper">
+        <div class="edit-role-form-header">
+            Редактировать Роль
+        </div>
+        <form class="edit-role-form" method="post" asp-action="CreateRole">
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="Id" />
+            <label>Имя роли</label>
+            <div>
+                <span asp-validation-for="Name"></span>
+                <input class="edit-form-text-input" asp-for="Name" />
+            </div>
+            <input class="edit-form-submit-input" type="submit" value="Edit" />
+        </form>
+    </div>
+</div>

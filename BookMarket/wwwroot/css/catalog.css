@@ -1,0 +1,64 @@
+﻿.catalog-wrapper{
+    width:100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.book-card {
+    border: 1px solid #dad9d9b3;
+    
+}
+
+.book-card:hover {
+    border: 1px solid #9a9a9aff;
+}
+
+.book-card a{
+    text-decoration:none;
+}
+
+.book-card-image {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 315px;
+}
+
+
+.book-card-image img {
+    object-fit: scale-down;      
+    width: 70%;
+    height: 80%;
+    transition: all linear 0.3s;
+}
+
+.book-card-title {
+    padding: 10px 10px 0 10px;
+    color:black;
+}
+
+.book-card-title a{
+    color: black;
+}
+
+.book-card-author{
+    padding: 10px 10px 0 10px;
+    text-align: left;   
+}
+
+.book-card-author a{
+    color: #666666ff;
+}
+
+.book-card-raiting {
+    color: black;
+    padding: 10px 10px 0 10px;
+    display:flex;
+}
+
+.book-card-price {
+    color: black;
+    padding: 10px;
+}
+

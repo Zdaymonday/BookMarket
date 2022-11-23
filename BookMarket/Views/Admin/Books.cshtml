@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "_Layout_admin";
+}
+
+<div class="books-container">
+    <div class="books-options">
+        <div class="option-tile">
+            Поиск по автору
+            <form class="search-book-form" method="get" asp-action="SearchByAuthorName">
+                <input type="text" name="context" placeholder="Enter author name" />
+                <input class="submit-button" type="submit" value="Search" />
+            </form>
+        </div>
+        <div class="option-tile">
+            Поиск по названию
+            <form class="search-book-form" method="get" asp-action="SearchBookByTitle">
+                <input type="text" name="context" placeholder="Enter book title" />
+                <input class="submit-button" type="submit" value="Search" />
+            </form>
+        </div>
+        <div class="option-tile">
+            Загрузить книги
+            <form class="search-book-form" method="post" enctype="multipart/form-data" asp-action="UploadFile">                
+                <input id="file" type="file" name="file" />  
+                <input type="submit" value="Search" />
+            </form>
+        </div>
+    </div>
+</div>

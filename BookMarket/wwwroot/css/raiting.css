@@ -1,0 +1,57 @@
+﻿.raiting-container {
+    display: inline-block;
+    position: relative;
+    font-size: 32px;
+    
+}
+
+    .raiting-container::before {
+        display: block;
+        content: "★★★★★★★★★★";
+    }
+
+.raiting-items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+
+.raiting-star-radio{
+    position: absolute;
+    width:0;
+    height:0;
+    opacity:0;
+    visibility:hidden;
+    top:0;
+    left:0;
+}
+
+    .raiting-star-radio:checked,
+    .raiting-star-radio:checked ~ .raiting-star-label {
+        color: #ff6a00;
+    }
+
+    .raiting-star-label {
+        flex: 0 0 10%;
+        height: 100%;
+        cursor: pointer;
+        color: black;
+    }
+
+        .raiting-star-label::before {
+            content: "★";
+            display: block;
+            transition: all 0.2s linear;
+        }
+
+    .raiting-star-label:hover,
+    .raiting-star-label:hover ~ .raiting-star-label,
+    .raiting-star-label:checked ~ .raiting-star-label:hover {
+        color:#ffd800;
+    }

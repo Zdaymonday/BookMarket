@@ -1,0 +1,50 @@
+﻿.raiting-container {
+    display: flex;
+    align-items: flex-end;
+    line-height: 0.75;
+    font-size:inherit;
+}
+
+.raiting-body {
+    position:relative;
+}
+
+.raiting-body::before {
+    content: "★★★★★★★★★★";
+    color:#808080;
+    display:block;
+}
+
+.raiting-stars {
+    display: flex;
+    position:absolute;
+    width:100%;
+    height: 100%;
+    top:0;
+    left:0;
+}
+
+.raiting-star {
+    flex:0 0 10%;
+    height:100%;
+    opacity:0;
+}
+
+.user-raiting-stars {
+    position: absolute;
+    /*width: 75%;*/
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+    .user-raiting-stars::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        content: "★★★★★★★★★★";
+        color:#ff6a00;
+    }

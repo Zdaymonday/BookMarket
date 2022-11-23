@@ -1,0 +1,45 @@
+﻿@model SliderViewModel
+
+<div class="slider-title">
+    @Model.Title
+</div>
+<div class="slider_wrapper slider_name_@Model.">
+    <div class="button_block">
+        <button class="slider-butn prev">
+            <img src="/image/caret-left.svg" alt="" />
+        </button>
+    </div>
+    <div class="slider">
+        <div class="slider-line">
+            @foreach (var item in Model.BookCards)
+            {
+                <div>
+                    <a class="clickable-card" asp-action="Book" asp-controller="Catalog" asp-route-id="@item.Id">
+                        <div class="slider-card clickable-card" id="@item.Id">
+                            <img src="@item.BookImagePath" alt="">
+                            <div class="slider-card-title">
+                                @item.Title
+                            </div>
+                            <div class="slider-card-author-year">
+                                @item.Author, @item.Year
+                            </div>
+                            <div class="slider-card-cart">
+                                @item.Price руб.
+                            </div>
+                            <div class="slider-card-rating">
+                                @await Html.PartialAsync("UserRating", item.Rating)
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="button_block">
+        <button class="slider-butn next">
+            <img src="/image/caret-right.svg" alt="" />
+        </button>
+    </div>
+</div>
+
+

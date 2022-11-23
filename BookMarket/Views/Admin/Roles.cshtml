@@ -1,0 +1,34 @@
+﻿@model IEnumerable<BookMarket.ViewModels.Admin.RoleViewModel>
+
+@{
+    Layout = "_Layout_admin";
+}
+
+<div class="roles-container">
+    <div class="create-role-btn-container">
+        <a class="create-role-btn" asp-action="CreateRole">Create new Role</a>
+    </div>
+    <div class="role-rows-wrapper">
+        <div class="role-row-th">GUID</div>
+        <div class="role-row-th">Name</div>
+        <div class="role-row-th">Tools</div>
+        @foreach (var item in Model)
+        {
+            <div class="role-row-td">@item.Id</div>
+            <div class="role-row-td">@item.Name</div>
+            <div class="role-row-td">
+                <div class="edit-link-container">
+                    <a asp-action="EditRole" asp-route-id="@item.Id"><div class="edit-link-inner-container">
+                        Edit
+                    </div></a>
+                </div>
+                <div class="remove-form-container">
+                    <form method="post" asp-action="RemoveRole">
+                        <input type="hidden" name="id" value="@item.Id">
+                        <input type="submit" value="Remove">
+                    </form>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BookMarket Admin Panel</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"> </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="/css/main.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/admin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/pagination.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Inner -->
+    <div class="inner-container shadow-lg">
+        <!-- Header -->
+        <div class="header-wrapper shadow-sm ">
+            <div class="logo-container">
+                <a class="clickable-card" asp-action="Index" asp-controller="Home">
+                    <img src="~/image/color_icon_small.png" />
+                </a>
+            </div>
+
+            <div class="top-panel-container">
+                <ul>
+                    @if (User?.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li>
+                            @User.Identity.Name
+                        </li>
+                    }
+                    <li><a href="#pay">Оплата</a></li>
+                    <li><a href="#contects">Контакты</a></li>
+                    <li><a href="#delivery">Доставка</a></li>
+                </ul>
+            </div>
+            <div class="bottom-header-container">
+                <form class="search-container" asp-action="Search" asp-controller="Catalog" method="get">
+                    <input type="search" name="context" class="form-control rounded shadow-sm" placeholder="Search" />
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+
+                <div class="login-container">
+                    <ul>
+                        <li>
+                            @if (User?.Identity?.IsAuthenticated ?? false)
+                            {
+                                <a class="login-top-button btn btn-primary" asp-action="Logout" asp-controller="Account">Выход</a>
+                            }
+                            else
+                            {
+                                <a class="login-top-button btn btn-primary" asp-action="Login" asp-controller="Account">Вход</a>
+                            }
+                        </li>
+                        <li>
+                            <div>&nbsp;</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <link rel="stylesheet" href="/css/admin.css" asp-append-version="true" />
+
+        <div class="main-admin-container">
+            <ul class="admin-navbar">
+                <li>
+                    <a class="admin-navbar-btn" asp-action="Roles" asp-controller="Admin"> <div>Роли</div> </a>
+                </li>
+                <li>
+                    <a class="admin-navbar-btn" asp-action="Users" asp-controller="Admin"><div>Пользователи</div></a>
+                </li>
+                <li>
+                    <a class="admin-navbar-btn" asp-action="Books" asp-controller="Admin"><div>Книги</div></a>
+                </li>
+                <li>
+                    <a class="admin-navbar-btn" asp-action="Orders" asp-controller="Admin">Заказы</a>
+                </li>
+            </ul>
+            <div class="admin-content-page">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

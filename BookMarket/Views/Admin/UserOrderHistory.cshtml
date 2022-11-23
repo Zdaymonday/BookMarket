@@ -1,0 +1,49 @@
+﻿@model UserOrdersViewModel
+
+@{
+    Layout = "_Layout_admin";
+}
+
+<div class="order-list-container">
+    <div class="order-list-options">
+        <div><a asp-action="Users" asp-controller="Admin"><div>Return to users</div></a></div>
+    </div>
+    <div class="order-list-header">История заказов</div>
+    <div class="order-list-grid">
+        <div class="order-list-grid-th">Номер заказа</div>
+        <div class="order-list-grid-th">Наименование</div>
+        <div class="order-list-grid-th">Количество</div>
+        <div class="order-list-grid-th">Статус оплаты</div>
+        <div class="order-list-grid-th">Статус заказа</div>
+        <div class="order-list-grid-th">Tools</div>
+        @foreach (var order in await Model.GetOrders())
+        {
+            <div class="order-list-grid-td">@order.Id</div>
+            <div class="order-list-grid-td">
+                @foreach (var item in order.Items)
+                {
+                    <p>@item</p>
+                }
+            </div>
+            <div class="order-list-grid-td">
+                @foreach (var quantity in order.Quantities)
+                {
+                    <p>@quantity</p>
+                }
+            </div>
+            <div class="order-list-grid-td">
+                @order.PaymentStatus
+            </div>
+            <div class="order-list-grid-td">
+                @order.OrderStatus
+            </div>
+            <div class="order-list-grid-td last-td">
+                <div>
+                    <a asp-action="EditUserOrder" asp-controller="Admin" asp-route-id="@order.Id"><div>Edit Order</div></a>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+

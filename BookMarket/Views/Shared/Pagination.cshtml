@@ -1,0 +1,92 @@
+﻿@model PageViewModel
+
+@{
+    string context = Model.Context;
+}
+
+<div class="pagination-container">
+    <ul>
+        @if (Model.HasPreviousPage)
+        {
+            <li>
+                <a asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)" asp-route-context="@context">&laquo;</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <div>&nbsp;</div>
+            </li>
+        }
+        @if (Model.TotalPages < 7)
+        {
+            for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="@(i == Model.CurrentPage ? "active" : "inactive")">
+                    <a asp-route-page=@i asp-route-context=@context>@i</a>
+                </li>
+            }
+        }
+        else
+        {
+            if (Model.CurrentPage < 6)
+            {
+                for (int i = 1; i < 6; i++)
+                {
+                    <li class="@(i == Model.CurrentPage ? "active" : "inactive")">
+                        <a asp-route-page=@i asp-route-context=@context>@i</a>
+                    </li>
+                }
+                <li class="inactive">
+                    <a asp-route-page=@(Model.CurrentPage + 6 > Model.TotalPages ? Model.TotalPages - 6 : Model.CurrentPage + 6) asp-route-context=@context>...</a>
+                </li>
+                <li class="inactive">
+                    <a asp-route-page=@Model.TotalPages asp-route-context=@context>@Model.TotalPages</a>
+                </li>
+                
+            }
+            else if (Model.CurrentPage > Model.TotalPages - 6)
+            {
+                <li class="inactive">
+                    <a asp-route-page=1 asp-route-context=@context>1</a>
+                </li>
+                <li class="inactive">
+                    <a asp-route-page=@(Model.CurrentPage - 6) asp-route-context=@context>...</a>
+                </li>
+                for (int i = Model.TotalPages - 5; i < Model.TotalPages; i++)
+                {
+                    <li class="@(i == Model.CurrentPage ? "active" : "inactive")">
+                        <a asp-route-page=@i asp-route-context=@context>@i</a>
+                    </li>
+                }
+            }
+            else{
+                <li class="inactive">
+                    <a asp-route-page=1 asp-route-context=@context>1</a>
+                </li>
+                <li class="inactive">
+                    <a asp-route-page=@(Model.CurrentPage - 6) asp-route-context=@context>...</a>
+                </li>
+                for (int i = Model.CurrentPage - 3; i <= Model.CurrentPage + 3; i++)
+                {
+                    <li class="@(i == Model.CurrentPage ? "active" : "inactive")">
+                        <a asp-route-page=@i asp-route-context=@context>@i</a>
+                    </li>
+                }
+                <li class="inactive">
+                    <a asp-route-page=@(Model.CurrentPage + 6 > Model.TotalPages ? Model.TotalPages - 6 : Model.CurrentPage + 6) asp-route-context=@context>...</a>
+                </li>
+                <li class="inactive">
+                    <a asp-route-page=@Model.TotalPages asp-route-context=@context>@Model.TotalPages</a>
+                </li>
+            }
+
+        }
+        @if (Model.HasNextPage)
+        {
+            <li class="inactive">
+                <a asp-route-page=@(Model.CurrentPage +1) asp-route-context=@context>&raquo;</a>
+            </li>
+        }
+    </ul>
+</div>

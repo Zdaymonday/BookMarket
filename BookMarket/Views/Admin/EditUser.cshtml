@@ -1,0 +1,33 @@
+﻿@model BookMarket.ViewModels.Admin.EditUserViewModel
+
+@{
+    Layout = "_Layout_admin";
+}
+
+<div class="edit-user-container">
+    <div class="edit-user-wrapper">
+        <div class="edit-user-header">
+            Редактирование пользователя
+        </div>
+        <form class="edit-user-form" method="post" asp-action="EditUser">
+            <input type="hidden" asp-for="UserId" />
+            <input class="edit-user-input-text" asp-for="UserName" />
+            <input class="edit-user-input-text" asp-for="UserEmail" />
+            <div>
+                <div class="checkbox-block-header">
+                    Выберите необходимые роли
+                </div>
+                <div class="checkbox-container">
+                @foreach (var role in Model.AvailableRoles)
+                {
+                    <div class="checkbox-cell">
+                        <input type="checkbox" id="@role" value="@role" name="UserRoles" @(Model.UserRoles.Contains(role) ? "checked" : "") />
+                        <label for="@role">@role</label>
+                    </div>
+                }
+                </div>
+            </div>
+            <input class="edit-user-input-submit" type="submit" value="Edit" />
+        </form>
+    </div>
+</div>

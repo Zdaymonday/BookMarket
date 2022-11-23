@@ -1,0 +1,29 @@
+﻿@model UserProfileViewModel
+
+<div class="user-profile-container">
+    <div class="user-profile-header">Редактировать данные</div>
+    <form method="post" asp-action="Profile">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label>Логин:</label>
+            <input asp-for="UserLogin" />
+            <span asp-validation-for="UserLogin"></span>
+        </div>
+        <div>
+            <label>Email:</label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div>
+            <label>Телефон:</label>
+            <input asp-for="PhoneNumber" />
+            <span asp-validation-for="PhoneNumber"></span>
+        </div>
+        <div class="user-profile-form-btns">
+            <label>&nbsp;</label>
+            <input type="submit" value="Подтвердить" />
+            <div><a asp-action="Index"><div>Отмена</div></a></div>
+        </div>
+    </form>
+</div>
+    

@@ -1,0 +1,127 @@
+﻿@model BookMarket.ViewModels.Admin.BookFullViewModel
+
+@{
+    Layout = "_Layout_admin";
+}
+
+<div class="edit-book-container">
+    <div class="edit-book-title">Редактирование</div>
+    <form method="post" asp-action="EditBook">
+        <div asp-validation-summary="All"></div>
+        <div class="subtitle">Page options</div>
+        <div class="form-grp">
+            <label>Id страницы:</label>
+            <input value="@Model.PageId" disabled />
+            <input type="hidden" asp-for="PageId" />
+        </div>
+
+        <div class="form-grp">
+            <label>Имя магазина:</label>
+            <input asp-for="ShopName" />
+        </div>
+
+        <div class="form-grp">
+            <label>Адрес страницы:</label>
+            <input asp-for="BookPage" />
+        </div>
+
+        <div class="form-grp">
+            <label>Цена:</label>
+            <input asp-for="Price" />
+        </div>
+
+        <div class="form-grp">
+            <label></label>
+
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="subtitle">Book Info</div>
+
+        <div class="form-grp">
+            <label>Book Id:</label>
+            <input asp-for="BookId" disabled />
+        </div>
+
+        <div class="form-grp">
+            <label>ISBN:</label>
+            <input asp-for="ISBN" />
+        </div>
+
+        <div class="form-grp">
+            <label>Название книги:</label>
+            <input asp-for="BookName" disabled />
+        </div>
+
+        <div class="form-grp">
+            <label>Год издания:</label>
+            <input asp-for="PublicationDate" />
+        </div>
+
+        <div class="form-grp">
+            <label>Количество страницы</label>
+            <input asp-for="PageCount" />
+        </div>
+
+        <div class="form-grp">
+            <label>GUID изображения:</label>
+            <input asp-for="BookImageGuid" />
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="subtitle">Publisher Info</div>
+
+
+        <div class="form-grp">
+            <label>Id Издателя:</label>
+            <input asp-for="PublisherId" disabled />
+        </div>
+
+        <div class="form-grp">
+            <label>Название издательства:</label>
+            <input asp-for="PublisherName" />
+        </div>
+
+        <div class="form-grp">
+            <label>Полное название:</label>
+            <input asp-for="PublisherFullName" />
+        </div>
+
+        <div class="form-grp">
+            <label>Страна издательства:</label>
+            <input asp-for="Country" />
+        </div>
+
+        <div class="form-grp">
+            <label>Город издательства:</label>
+            <input asp-for="City" />
+        </div>
+
+        <div class="form-grp">
+            <label>Год основания:</label>
+            <input asp-for="FoundationDate" />
+        </div>
+
+        <input type="hidden" asp-for="ReturnUrl" />
+        <div class="separator"></div>
+        <div class="form-btns-container">
+            <input class="submit-button" type="submit" value="Сохранить" />
+            <div class="discard-book-changes-btn-container">
+                <a class="discard-book-changes-btn" href="@Model.ReturnUrl"><div>Отмена</div></a>
+            </div>
+        </div>
+
+
+
+    </form>
+    <div class="subtitle">Additional</div>
+
+    <div class="form-grp">
+        <a href="#edit_author">Edit Author Info</a>
+    </div>
+    <div class="form-grp">
+        <a href="#edit_works">Edit Works Info</a>
+    </div>
+</div>

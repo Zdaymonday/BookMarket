@@ -1,0 +1,70 @@
+﻿@model BookViewModel
+
+<link rel="stylesheet" href="/css/book.css" asp-append-version="true" />
+@{
+    string price = Model.Price == 0M ? "Нет в продаже" : Model.Price.ToString("##.## руб.");
+}
+
+<div class="book-content-container">
+    <div class="book-main-container">
+        <div class="book-image-container">
+            <div>
+                <img src="@Model.BookImagePath" alt="@Model.Title" />
+            </div>
+            <div class="price-container">
+                <a class="put-in-cart-btn"
+                   asp-action="AddToCart"
+                   asp-controller="Cart"
+                   asp-route-page_id="@Model.Id"
+                   asp-route-returnUrl="@Context.Request.Path">
+                    <div class="inner-btn-container">
+                        <div class="text-price">@price</div>
+                        <div class="separator"></div>
+                        <div class="cart-img-container">
+                            <img src="/image/cart-plus.svg" alt="" />
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="book-description-container">
+            <div class="book-info-container">
+                <div>
+                    <h3>@Model.Title</h3>
+                </div>
+                <div class="author-and-year">
+                    <div class="author">@Model.Author&nbsp;</div>
+                    <div class="published">,&nbsp;@Model.Year</div>
+                </div>
+                <div class="book-rating">
+                    @await Html.PartialAsync("UserRating", Model.Rating)
+                </div>
+            </div>
+            <div class="book-annotation-container">
+                <div class="book-annotation-text">
+                    <h6>Аннотация:</h6>
+                    @Model.Anntotation;
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="book-reviews-container">
+        <div class="book-reviews-container-header">
+            <h4>Отзывы</h4>
+            <ul>
+                <li><button>Отлично</button></li>
+                <li><button>Хорошо</button></li>
+                <li><button>Средне</button></li>
+                <li><button>Плохо</button></li>
+            </ul>
+        </div>
+        <ul>
+            @foreach (var review in Model.Reviews)
+            {
+                <li>
+                    @await Html.PartialAsync("BookReview",review)
+                </li>
+            }
+        </ul>
+    </div>
+</div>

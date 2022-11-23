@@ -1,0 +1,33 @@
+﻿@model BookMarket.ViewModels.Admin.BooksViewModel
+
+@{
+    Layout = "_Layout_admin";
+    string path = Context.Request.Path.ToString();
+    string query = Context.Request.QueryString.ToString();
+    string returnUrl = $"{path}{query}";
+}
+
+<div class="search-by-author-container">
+    <div class="search-by-author-th">Title</div>
+    <div class="search-by-author-th">Name</div>
+    <div class="search-by-author-th">Price</div>
+    <div class="search-by-author-th">Tools</div>
+    @foreach(var item in Model.Books){
+        <div class="search-by-author-td">@item.Title</div>
+        <div class="search-by-author-td">@item.Author</div>
+        <div class="search-by-author-td">@item.Price</div>
+        <div class="search-by-author-td tools-btn-container"> 
+            <div class="edit-book-btn-container">
+                <a class="edit-book-btn" asp-action="EditBook" asp-route-id="@item.PageId" asp-route-retunrUrl="@returnUrl"><div>Edit</div></a>
+            </div>
+            <div class="delete-book-btn-container">
+                <form method="post" asp-action="RemoveBook">
+                    <input type="hidden" name="returnUrl" value="@returnUrl" />
+                    <input type="hidden" name="id" value="@item.PageId" />
+                    <input type="submit" value="Delete">
+                </form>
+            </div>
+        </div>
+    }
+</div>
+@await Html.PartialAsync("Pagination", Model.PageViewModel)

@@ -1,0 +1,39 @@
+﻿@model UserOrdersViewModel
+
+<div class="account-container">
+    <div class="account-options">
+        <div><a asp-action="Index" asp-controller="Catalog"><div>Return to catalog</div></a></div>
+        <div><a asp-action="Profile"><div>Change user data</div></a></div>        
+    </div>
+    <div class="user-order-history">История заказов</div>
+    <div class="order-list">
+        <div class="order-item-th">Номер заказа</div>
+        <div class="order-item-th">Наименование</div>
+        <div class="order-item-th">Количество</div>
+        <div class="order-item-th">Статус оплаты</div>
+        <div class="order-item-th">Статус заказа</div>
+        @foreach (var order in await Model.GetOrders())
+        {
+            <div class="order-item-td">@order.Id</div>
+            <div class="order-item-td">
+                @foreach (var item in order.Items)
+                {
+                    <p>@item</p>
+                }
+            </div>
+            <div class="order-item-td">
+                @foreach (var quantity in order.Quantities)
+                {
+                    <p>@quantity</p>
+                }
+            </div>
+            <div class="order-item-td">
+                @order.PaymentStatus
+            </div>
+            <div class="order-item-td">
+                @order.OrderStatus
+            </div>
+        }
+
+    </div>
+</div>

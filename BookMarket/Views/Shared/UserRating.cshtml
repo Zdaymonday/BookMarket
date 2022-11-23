@@ -1,0 +1,25 @@
+﻿@model Double
+
+
+
+@{
+    string width = (Model * 10).ToString("##") + "%";
+}
+<div class="raiting-container">
+    <div class="raiting-body">
+        <div class="user-raiting-stars" style="width:@width"></div>
+        <div class="raiting-stars">
+            <input id="s1" type="radio" class="raiting-star" name="raiting-item" value="1" /> 
+            <input id="s2" type="radio" class="raiting-star" name="raiting-item" value="2" />
+            <input id="s3" type="radio" class="raiting-star" name="raiting-item" value="3" />
+            <input id="s4" type="radio" class="raiting-star" name="raiting-item" value="4" />
+            <input id="s5" type="radio" class="raiting-star" name="raiting-item" value="5" />
+            <input id="s6" type="radio" class="raiting-star" name="raiting-item" value="6" />
+            <input id="s7" type="radio" class="raiting-star" name="raiting-item" value="7" /> 
+            <input id="s8" type="radio" class="raiting-star" name="raiting-item" value="8" />
+            <input id="s9" type="radio" class="raiting-star" name="raiting-item" value="9" />
+            <input id="s10" type="radio" class="raiting-star" name="raiting-item" value="10" />
+        </div>
+    </div>
+    <div class="user-raiting-value">@Model.ToString()</div>
+</div>

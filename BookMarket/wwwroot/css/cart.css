@@ -1,0 +1,90 @@
+﻿.cart-container {
+    background: #f1f4f8ad;
+    height: 100vh;
+}
+
+.cart-title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.cart-table-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 2fr 2fr 2fr 1fr;
+    background: #373737ff;
+    color: white;
+}
+
+.cart-table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 2fr 2fr 2fr 1fr;
+    height: max-content;
+    max-height: 300px;
+    overflow: hidden;
+    border-bottom: 1px solid #808080;
+}
+
+.cart-table img {
+    object-fit: scale-down;
+    height: 100px;
+    padding: 2px;
+}
+
+.offer-btn-container {
+    display: grid;
+    justify-items: right;
+}
+
+.offer-btn {
+    margin-top: 10px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    border: 2px solid #448420e0;
+    border-radius: 15px;
+    background: #58af27ff;
+    font-size: 32px;
+    transition: all linear 0.3s;
+}
+
+    .offer-btn:hover {
+        color: #f1f4f861;
+        background: #4b9622ff;
+        border-color: #3f7a1dff;
+    }
+
+/*Заказ*/
+
+.place-order-container {
+    height: 100vh;
+}
+
+.place-order-form, place-order-form input {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+}
+
+.place-order-form {
+    display: grid;
+    background: #f1f4f8ad;
+}
+
+    .place-order-form div {
+        display: flex;
+        margin: 5px 0;
+    }
+
+    .place-order-form div:last-child {
+        padding-left:100px;
+    }
+
+    .place-order-form label {
+        width: 200px;
+        text-align: right;
+    }
+
+    .place-order-form input {
+        border: 1px solid #767676;
+    }

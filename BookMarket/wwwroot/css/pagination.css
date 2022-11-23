@@ -1,0 +1,28 @@
+﻿.pagination-container{
+    display:flex;
+    justify-content: center;
+    font-family:'Times New Roman';
+}
+
+    .pagination-container ul {
+        display: flex;
+        list-style: none;
+        background: #f1f4f8ad;
+        width:stretch;
+    }
+
+    .pagination-container .inactive{
+        font-size: 24px;
+        margin: 0 3px;        
+    }
+
+    .pagination-container .active {
+        font-size: 28px;
+        margin: 0 3px;
+    }
+
+    .pagination-container ul a{
+        color:black;
+        font-weight: 500;
+        text-decoration:none;
+    }

@@ -1,0 +1,31 @@
+﻿@model IndexViewModel;
+
+<div class="body-container shadow-sm">
+
+    <!-- Burger menu -->
+    <div class="burger-container">
+        <button class="list-btn">
+            <img src="~/image/list.svg" class="list-icon" />
+        </button>
+    </div>
+
+    @await Html.PartialAsync("Navbar")
+
+    <div class="content-container">
+        <div>
+            @await Html.PartialAsync("BookSlider", 
+                 new SliderViewModel(Model.pages_for_slider["Фэнтези"], "Лучшее в жанре Фэнтези"))
+        </div>
+
+        <div>
+            @await Html.PartialAsync("BookSlider",
+                new SliderViewModel(Model.pages_for_slider["Фантастика"], "Лучшее в жанре Фантастика"))
+        </div>
+
+        <div>
+            @await Html.PartialAsync("BookSlider",
+                new SliderViewModel(Model.pages_for_slider["Мистика"], "Лучшее в жанре Мистика"))
+        </div>
+    </div>
+
+</div>

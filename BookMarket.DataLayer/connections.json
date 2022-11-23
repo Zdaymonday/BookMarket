@@ -1,0 +1,6 @@
+{
+  "ConnectionStrings": {
+    "book_data": "Server = .\\sqlexpress; Database = book_data; Trusted_Connection = true; MultipleActiveResultSets = true;",
+    "cart_data": "Server = .\\sqlexpress; Database = cart_data; Trusted_Connection = true; MultipleActiveResultSets = true;"
+  }
+}

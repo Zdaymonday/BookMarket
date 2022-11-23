@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "identity": "Server = .\\sqlexpress; Database = user_data; Trusted_Connection = true;"
+  }
+}

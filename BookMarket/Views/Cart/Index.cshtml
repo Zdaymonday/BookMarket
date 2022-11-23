@@ -1,0 +1,34 @@
+﻿@model CartViewModel
+
+<div class="cart-container">
+    <div class="cart-title">
+        Оформление заказа
+    </div>
+    <div class="cart-table-header">
+        <div>&nbsp;</div><div>Обложка</div><div>Наименование</div><div>Цена</div><div>Количество</div><div>Итоговая цена</div><div>&nbsp;</div>
+    </div>
+    <div class="cart-table">
+        @foreach (var cart_item in Model.GetCartItemViewModels())
+        {
+            <div class="cart-table-row">
+                <div>&nbsp;</div>
+                <div><img src="@cart_item.ImagePath" class="cart-book-image" /></div>
+                <div>
+                    <div>@cart_item.Title</div>
+                    <div>@cart_item.Author</div>
+                    <div>Год: @cart_item.Year</div>
+                </div>
+                <div>@cart_item.Price</div>
+                <div>@cart_item.Quantity шт.</div>
+                <div>@cart_item.TotalPrice</div>
+                <div><a asp-action="Remove" asp-controller="Cart" asp-route-pageId="@cart_item.PageId">Удалить</a></div>
+            </div>
+        }
+    </div>
+    <div class="cart-table-header">
+        <div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>Итого: @Model.CartPrice</div><div>&nbsp;</div>
+    </div>
+    <div class="offer-btn-container">
+        <a class="offer-btn" asp-action="PlaceAnOrder">Оформить заказ</a>
+    </div>
+</div>

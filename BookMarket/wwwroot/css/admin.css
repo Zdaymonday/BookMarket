@@ -1,0 +1,566 @@
+﻿.main-admin-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 1em;
+    height: 100vh;
+}
+
+.admin-navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .admin-navbar li {
+        margin: 0 0 1px 0;
+        padding: 0;
+        background: #808080;
+        border: #767676;
+    }
+
+.admin-navbar-btn {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    transition: all linear 0.3s;
+}
+
+    .admin-navbar-btn:hover {
+        color: white;
+    }
+
+.admin-navbar li:hover {
+    background: #676767;
+}
+
+.admin-content-page {
+    background: #f1f4f8d8;
+}
+
+/*User page block*/
+
+.user-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+}
+
+.user-th {
+    background: #767676;
+    color: white;
+    border-right: 1px solid white;
+}
+
+.user-td {
+    border-right: 1px solid #767676;
+    border-bottom: 1px solid #767676;
+}
+
+.edit-form-container:hover {
+    transition: all linear 0.3s;
+}
+
+.edit-form-container:hover {
+    background: #a8a8a8;
+}
+
+.edit-form {
+    margin: 0;
+    padding: 0;
+}
+
+    .edit-form input {
+        border: none;
+        background: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: left;
+    }
+
+        .edit-form input:hover {
+            color: white;
+        }
+
+.remove-link-container {
+    background: #767676;
+    transition: all linear 0.3s;
+}
+
+.remove-link {
+    text-decoration: none;
+    color: white;
+}
+
+.remove-link-container:hover {
+    background: #ad2b2be6;
+}
+
+.remove-link:hover {
+    color: white;
+}
+
+.edit-user-wrapper {
+    border: 2px solid #767676;
+    width: 360px;
+}
+
+.edit-user-header {
+    background: #767676;
+    color: white;
+}
+
+.edit-user-input-text {
+    padding: 0 2px;
+    background: none;
+    color: #767676;
+    border: none;
+    border-bottom: 1px solid #767676;
+    border-top: 1px solid #767676;
+    width: 100%;
+}
+
+    .edit-user-input-text:hover {
+        background: #76767657;
+        border: 1px solid #767676;
+    }
+
+.checkbox-block-header {
+    background: #767676;
+    color: white;
+}
+
+.checkbox-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1px;
+    border-bottom: 1px solid #767676;
+}
+
+.checkbox-cell {
+    margin: 1px;
+}
+
+.edit-user-input-submit {
+    border: none;
+    background: #767676;
+    color: white;
+    width: 100%;
+    padding: 3px;
+}
+
+    .edit-user-input-submit:hover {
+        color: #c2ff9cd0;
+    }
+
+
+/*Role page block*/
+.create-role-btn-container {
+    margin: 10px 1px;
+    border-radius: 2px;
+    width: 200px;
+    background: #3b4c6dc3;
+    font-size: 24px;
+}
+
+.create-role-btn {
+    text-decoration: none;
+    color: white;
+    transition: all linear 0.3s;
+}
+
+    .create-role-btn:hover {
+        color: white;
+    }
+
+.create-role-btn-container:hover {
+    background: #3b4c6de2;
+}
+
+.role-rows-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+
+.role-row-th {
+    background: #767676;
+    color: white;
+    border-right: 1px solid white;
+    padding-left: 2px;
+}
+
+.role-row-td {
+    border-right: 1px solid #767676;
+    border-bottom: 1px solid #767676;
+}
+
+.edit-link-container a {
+    text-decoration: none;
+    color: black;
+    transition: all linear 0.1s;
+}
+
+.edit-link-inner-container {
+    transition: all linear 0.3s;
+    padding-left: 3px;
+    border-top: 1px solid #767676;
+    border-bottom: 1px solid #767676;
+}
+
+    .edit-link-inner-container:hover {
+        background: #767676;
+        border-color: #a8a8a8;
+    }
+
+.edit-link-container a:hover {
+    color: white;
+}
+
+
+
+.remove-form-container {
+    margin: 0;
+    padding: 0;
+    background: #767676;
+}
+
+    .remove-form-container input {
+        width: 100%;
+        background: none;
+        border: none;
+        color: white;
+        text-align: left;
+        padding: 0 3px;
+        transition: all linear 0.3s;
+    }
+
+        .remove-form-container input:hover {
+            background: #ad2b2be6;
+        }
+
+.edit-role-form-wrapper {
+    width: 300px;
+    border: 2px solid #767676;
+}
+
+.edit-role-form-header {
+    color: aliceblue;
+    background: #767676;
+}
+
+
+.edit-role-form {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.edit-form-text-input {
+    background: none;
+    border: none;
+    border-top: 1px solid #767676;
+    border-bottom: 1px solid #767676;
+    width: 100%;
+    color: #767676;
+}
+
+.edit-form-submit-input {
+    background: #a5a5a5d2;
+    color: white;
+    text-align: left;
+    border: none;
+}
+
+    .edit-form-submit-input:hover {
+        background: #909090d2;
+        color: #cffba6be;
+    }
+
+#Name-error {
+    color: #ff3838;
+}
+
+.validation-summary-errors ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .validation-summary-errors ul li {
+        margin: 0;
+        padding: 0;
+        color: #ff3838;
+    }
+
+.user-orders-link-container a{
+    text-decoration:none;
+    color:inherit;
+}
+.user-orders-link-container a div{
+    color: black;
+    transition: all linear 0.3s;
+}
+
+    .user-orders-link-container a div:hover {
+        color: white;
+        background: #767676;
+    }
+
+/*Books*/
+.books-container {
+    height: 100vh;
+}
+
+.books-options {
+    background: white;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap:1px;    
+}
+
+.option-tile {
+    background: #767676;
+    border: 1px solid #767676;
+    color: white;
+    transition: all linear 0.3s;
+    height: 100px;
+}
+
+    .option-tile:hover {
+        color: #c2ff9cd0;
+        border-color: #c2ff9cd0;
+        background: #666666ff;
+    }
+
+.search-book-form{
+    display:grid;
+    grid-template-rows: 3fr 2fr 2fr;
+    grid-gap:1px;
+}
+
+    .search-book-form input:first-child {
+        background: white;
+        border: 1px solid #767676;
+        font-size:24px;
+    }
+
+.submit-button {
+    background: #767676;
+    color: white;
+    border: 1px solid white;
+    transition: all linear 0.2s;
+}
+
+    .submit-button:hover {
+        background: #666666ff;
+        color: #c2ff9cd0;
+    }
+
+.search-by-author-container{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;    
+}
+
+.search-by-author-th {
+    background: #767676;
+    color: white;
+    border-right: 1px solid white;
+    padding-left: 2px;
+}
+
+.search-by-author-td {
+    border-right: 1px solid #767676;
+    border-bottom: 1px solid #767676;
+    color: #767676;
+    background: #fcfcfcce;
+    padding-left: 2px;
+}
+
+.search-by-author-td:nth-child(4n) {
+    padding-left:0px;
+}
+
+
+.edit-book-btn-container {
+    color: black;
+    border-bottom: 1px solid #767676;
+    border-top: 1px solid #767676;
+    transition: all linear 0.3s;
+}
+
+    .edit-book-btn-container:hover {
+        background: #767676;
+        color: white;
+        border-color: white;
+    }
+
+.edit-book-btn-container a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.delete-book-btn-container form, input{
+    padding:0;
+    margin:0;
+    border:none;
+}
+
+.delete-book-btn-container form {
+    background:red;
+}
+
+.delete-book-btn-container input {
+    width: 100%;
+    height:100%;
+    background: #767676;
+    color:white;
+}
+
+.delete-book-btn-container input:hover {
+    color: #ad2b2be6;
+}
+
+/*Edit Book*/
+
+.edit-book-container form, input, label {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+.edit-book-title {
+    background: #767676;
+    color:white;
+    width:100%;
+    font-size:24px;
+    padding-left:5px;
+}
+
+.separator {
+    border-bottom: 2px solid #767676;
+}
+
+.edit-book-container form {
+    display: grid;
+}
+
+    .edit-book-container input {
+        border: 1px solid #767676;
+        width: 350px;
+        overflow:hidden;
+    }
+
+.form-grp{
+    margin-bottom:1em;
+}
+.form-grp label{
+    width:200px;
+    padding-right:3px;
+    text-align:right;
+}
+
+.subtitle {
+    margin-top: 1px;
+    width: max-content;
+    background: rgb(118,118,118);
+    background: linear-gradient(90deg, rgba(118,118,118,0.9) 0%, rgba(118,118,118,0.85) 2%, rgba(255,255,255,0.4) 93%);
+}
+
+.form-btns-container{
+    display: flex;
+}
+
+.discard-book-changes-btn-container {
+    background: #ad2b2be6;
+    color: white;
+    width: 350px;
+}
+
+    .discard-book-changes-btn-container:hover, .discard-book-changes-btn-container:hover a {
+        background: #902424e6;
+        color: white;
+    }
+
+.discard-book-changes-btn {
+    text-decoration: none;
+    color:inherit;
+}
+
+/*User orders*/
+
+.order-list-container{
+    height:100vh;
+}
+
+.order-list-options {
+    display: flex;
+    margin: 2px 1em;
+}
+
+.order-list-options a{
+    text-decoration:none;
+    color:inherit;    
+}
+
+    .order-list-options a div{
+        background: #767676;
+        color:white;
+        transition: all linear 0.3s;
+        font-size:24px;
+    }
+
+        .order-list-options a div:hover {
+            background: #555555;
+        }
+
+.order-list-header{
+    background: #767676;
+    color:white;
+    margin-bottom:1px;
+}
+
+.order-list-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr 2fr 2fr;
+}
+
+.order-list-grid-th {
+    background: #767676;
+    color: white;
+    border-right: 1px solid white;
+}
+
+.order-list-grid-td {
+    background: white;
+    color: #767676;
+    border-right: 1px solid #767676;
+    border-bottom: 1px solid #767676;
+}
+
+.last-td {
+    background: #767676;
+    color: white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.order-list-grid-td a {
+    text-decoration: none;
+    color:inherit;
+    width:100%;
+    height:100%;
+}
+
+.last-td:hover {
+    background: #555555;
+    color: white;
+}
+
+
+
+
